@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const SignUpForm = () => {
+export default const SignUpForm = () => {
   return (
     <div>SignUpForm</div>
   )
