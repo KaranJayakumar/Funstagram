@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -16,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import {SignUpValidation} from '@/lib/validation'
 import Loader from "@/components/shared/Loader";
+import { createUserAccount } from "@/lib/appwrite/api";
 
 export default function SignUpForm (){
     const isLoading = false;
@@ -29,8 +29,9 @@ export default function SignUpForm (){
 
         },
     })
-    function onSubmit(values: z.infer<typeof SignUpValidation>) {
-        console.log(values)
+    async function onSubmit(values: z.infer<typeof SignUpValidation>) {
+        const newUser = await createUserAccount(values);
+        console.log(newUser);
     }
     return (
         <Form {...form}>
