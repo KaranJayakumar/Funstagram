@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default const RootLayout = () => {
+export default function RootLayout(){
   return (
     <div>RootLayout</div>
   )
